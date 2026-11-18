@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">阡陌智行</string>
+    <string name="camera_permission_denied">相机权限被拒绝，无法启动识别。</string>
+    <string name="segmentation_model_missing">未找到分割模型文件，请检查 assets。</string>
+    <string name="runtime_not_started">识别未启动</string>
+    <string name="runtime_mode_segmentation_only">仅分割</string>
+    <string name="runtime_mode_segmentation_detection">分割 + 检测</string>
+    <string name="detection_disabled">检测未启用</string>
+    <string name="detection_not_ready">检测已请求启动，但当前未就绪。</string>
+    <string name="debug_capture_button">抓取调试帧</string>
+    <string name="debug_capture_queued">已排队，下一帧会自动保存调试包。</string>
+    <string name="debug_capture_unavailable">当前暂时无法抓取调试帧。</string>
+    <string name="debug_capture_saved">调试包已保存：%1$s</string>
+    <string name="debug_capture_save_failed">保存调试包失败，请查看日志。</string>
+</resources>

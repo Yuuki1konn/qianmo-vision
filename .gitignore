@@ -1,0 +1,61 @@
+.DS_Store
+Thumbs.db
+
+# Local IDE / user state
+.vscode/
+.idea/
+.android-user/
+.gradle-user/
+.yolo_config/
+*.lnk
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.venv-export/
+
+# Android / Gradle local outputs
+android/.gradle/
+android/.idea/
+android/build/
+android/app/build/
+android/local.properties
+.gradle/
+*.apk
+*.aab
+
+# Temporary workspace
+tmp/
+
+# Large local datasets and generated outputs
+data/
+runs/
+output/
+models/
+
+# Local-only tooling / editor-agent state
+.tools/
+.claude/
+.vscode/
+.yolo_config/
+
+# Deliverable packages (软著/答辩材料，含构建产物)
+deliverables/
+
+# 实地测试素材（体积大，不进代码仓库）
+测试/
+
+# onnx2tf 校准用示例数据
+*.npy
+
+# 早期集成骨架（已由 android/app/ 完整实现取代，仅本地留档）
+android/template/
+
+# Releases 上传用的模型暂存目录（硬链接，不入库）
+releases/
+
+# 模型权重：从 GitHub Releases 下载，放到 android/app/src/main/assets/
+android/app/src/main/assets/*.tflite
+android/app/src/main/assets/*.onnx

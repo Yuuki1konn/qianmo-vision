@@ -1,0 +1,12 @@
+﻿path: data/processed/detection
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: electric_bike
+  1: motorcycle
+  2: tricycle
+  3: pedestrian
+  4: animal
+  5: barrier
+  6: pothole

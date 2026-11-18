@@ -1,0 +1,14 @@
+model: yolov8s.yaml
+epochs: 80
+batch: 6
+imgsz: 704
+device: 0
+workers: 2
+amp: true
+pretrained: false
+exist_ok: true
+verbose: true
+resume: false
+project: runs/detection
+name: yolov8_rural_coarse_plus_pothole_balanced_yolov8s_imgsz704
+data_yaml: configs/yolo_dataset_coarse_plus_pothole_balanced.yaml

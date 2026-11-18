@@ -1,0 +1,23 @@
+model_name: unet
+encoder_name: resnet34
+num_classes: 2
+epochs: 60
+batch_size: 8
+learning_rate: 0.0003
+num_workers: 4
+train_images: data/processed/segmentation_rugd/images/train
+train_masks: data/processed/segmentation_rugd/masks/train
+val_images: data/processed/segmentation_rugd/images/val
+val_masks: data/processed/segmentation_rugd/masks/val
+mask_suffix: .png
+use_mask_list: false
+image_size: [640, 640]
+amp: true
+cudnn_benchmark: true
+pin_memory: true
+persistent_workers: true
+prefetch_factor: 2
+channels_last: true
+matmul_precision: high
+save_dir: runs/segmentation_rugd
+mask_threshold: 0

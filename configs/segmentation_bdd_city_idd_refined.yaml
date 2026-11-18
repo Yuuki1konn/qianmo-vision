@@ -1,0 +1,69 @@
+model_name: unet
+encoder_name: resnet34
+num_classes: 2
+epochs: 90
+batch_size: 8
+learning_rate: 0.0002
+num_workers: 6
+image_size: [512, 512]
+amp: true
+cudnn_benchmark: true
+pin_memory: true
+persistent_workers: true
+prefetch_factor: 2
+channels_last: false
+matmul_precision: high
+val_interval: 2
+max_train_steps: 1200
+max_val_steps: 200
+seed: 42
+mask_threshold: 0
+resume_from: runs/segmentation_bdd_rugd_refined/best.pt
+resume_optimizer: false
+train_sources:
+  - name: bdd
+    image_dir: data/raw/bdd100k/bdd100k_images_100k/100k/train
+    mask_dir: data/raw/bdd100k/bdd100k_drivable_maps/labels/train
+    mask_suffix: _drivable_id.png
+    use_mask_list: true
+    positive_values: [1]
+  - name: cityscapes
+    image_dir: data/processed/segmentation_cityscapes/images/train
+    mask_dir: data/processed/segmentation_cityscapes/masks/train
+    mask_suffix: .png
+    use_mask_list: false
+    image_stem_strip: _leftImg8bit
+  - name: idd_1
+    image_dir: data/processed/segmentation_idd_1/images/train
+    mask_dir: data/processed/segmentation_idd_1/masks/train
+    mask_suffix: .png
+    use_mask_list: false
+  - name: idd_2
+    image_dir: data/processed/segmentation_idd_2/images/train
+    mask_dir: data/processed/segmentation_idd_2/masks/train
+    mask_suffix: .png
+    use_mask_list: false
+val_sources:
+  - name: bdd
+    image_dir: data/raw/bdd100k/bdd100k_images_100k/100k/val
+    mask_dir: data/raw/bdd100k/bdd100k_drivable_maps/labels/val
+    mask_suffix: _drivable_id.png
+    use_mask_list: true
+    positive_values: [1]
+  - name: cityscapes
+    image_dir: data/processed/segmentation_cityscapes/images/val
+    mask_dir: data/processed/segmentation_cityscapes/masks/val
+    mask_suffix: .png
+    use_mask_list: false
+    image_stem_strip: _leftImg8bit
+  - name: idd_1
+    image_dir: data/processed/segmentation_idd_1/images/val
+    mask_dir: data/processed/segmentation_idd_1/masks/val
+    mask_suffix: .png
+    use_mask_list: false
+  - name: idd_2
+    image_dir: data/processed/segmentation_idd_2/images/val
+    mask_dir: data/processed/segmentation_idd_2/masks/val
+    mask_suffix: .png
+    use_mask_list: false
+save_dir: runs/segmentation_bdd_city_idd_refined

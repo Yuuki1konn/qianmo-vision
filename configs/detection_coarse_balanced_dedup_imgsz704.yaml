@@ -1,0 +1,14 @@
+model: yolov8n.yaml
+epochs: 80
+batch: 8
+imgsz: 704
+device: 0
+workers: 2
+amp: true
+pretrained: false
+exist_ok: true
+verbose: true
+resume: false
+project: runs/detection
+name: yolov8_rural_coarse_balanced_dedup_imgsz704
+data_yaml: configs/yolo_dataset_coarse_balanced.yaml

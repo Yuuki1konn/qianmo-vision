@@ -1,0 +1,20 @@
+﻿seed: 42
+image_size:
+  width: 640
+  height: 640
+split_ratio:
+  train: 0.8
+  val: 0.1
+  test: 0.1
+classes:
+  detection:
+    - electric_bike
+    - motorcycle
+    - tricycle
+    - pedestrian
+    - animal
+    - barrier
+    - pothole
+  segmentation:
+    - background
+    - drivable_area

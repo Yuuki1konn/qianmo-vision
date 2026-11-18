@@ -1,0 +1,13 @@
+model: yolov8n.yaml
+epochs: 1
+batch: 4
+imgsz: 320
+device: 0
+workers: 0
+amp: false
+pretrained: false
+exist_ok: true
+verbose: true
+project: runs/detection
+name: yolov8_rural_coarse_balanced_smoke
+data_yaml: configs/yolo_dataset_coarse_balanced.yaml

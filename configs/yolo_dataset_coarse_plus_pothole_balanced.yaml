@@ -1,0 +1,11 @@
+path: data/processed/detection_coarse_plus_pothole_balanced
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: two_wheeler
+  1: pedestrian
+  2: animal
+  3: barrier
+  4: pothole
+  5: tricycle

@@ -1,0 +1,49 @@
+model_name: unet
+encoder_name: resnet34
+num_classes: 2
+epochs: 20
+batch_size: 8
+learning_rate: 0.0003
+num_workers: 4
+image_size: [384, 384]
+amp: true
+cudnn_benchmark: true
+pin_memory: true
+persistent_workers: true
+prefetch_factor: 2
+channels_last: false
+matmul_precision: high
+val_interval: 5
+max_train_steps: 400
+max_val_steps: 60
+seed: 42
+mask_threshold: 0
+train_sources:
+  - name: bdd
+    image_dir: data/raw/bdd100k/bdd100k_images_100k/100k/train
+    mask_dir: data/raw/bdd100k/bdd100k_drivable_maps/labels/train
+    mask_suffix: _drivable_id.png
+    use_mask_list: true
+    positive_values: [1]
+    max_samples: 4000
+  - name: rugd
+    image_dir: data/processed/segmentation_rugd/images/train
+    mask_dir: data/processed/segmentation_rugd/masks/train
+    mask_suffix: .png
+    use_mask_list: false
+    max_samples: 1500
+val_sources:
+  - name: bdd
+    image_dir: data/raw/bdd100k/bdd100k_images_100k/100k/val
+    mask_dir: data/raw/bdd100k/bdd100k_drivable_maps/labels/val
+    mask_suffix: _drivable_id.png
+    use_mask_list: true
+    positive_values: [1]
+    max_samples: 800
+  - name: rugd
+    image_dir: data/processed/segmentation_rugd/images/val
+    mask_dir: data/processed/segmentation_rugd/masks/val
+    mask_suffix: .png
+    use_mask_list: false
+    max_samples: 300
+save_dir: runs/segmentation_bdd_rugd

@@ -1,0 +1,8 @@
+﻿model: yolov8n.pt
+epochs: 120
+batch: 16
+imgsz: 640
+device: 0
+project: runs/detection
+name: yolov8_rural
+data_yaml: configs/yolo_dataset.yaml

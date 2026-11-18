@@ -1,0 +1,24 @@
+﻿model_name: unet
+encoder_name: resnet34
+num_classes: 2
+epochs: 80
+batch_size: 8
+learning_rate: 0.0003
+num_workers: 4
+train_images: data/raw/bdd100k/bdd100k_images_100k/100k/train
+train_masks: data/raw/bdd100k/bdd100k_drivable_maps/labels/train
+val_images: data/raw/bdd100k/bdd100k_images_100k/100k/val
+val_masks: data/raw/bdd100k/bdd100k_drivable_maps/labels/val
+mask_suffix: _drivable_id.png
+use_mask_list: true
+image_size: [640, 640]
+amp: true
+cudnn_benchmark: true
+pin_memory: true
+persistent_workers: true
+prefetch_factor: 2
+channels_last: true
+matmul_precision: high
+save_dir: runs/segmentation
+mask_threshold: 0
+positive_values: [1]

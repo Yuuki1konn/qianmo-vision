@@ -1,0 +1,8 @@
+{
+  "two_wheeler": 0,
+  "pedestrian": 1,
+  "animal": 2,
+  "barrier": 3,
+  "pothole": 4,
+  "tricycle": 5
+}
